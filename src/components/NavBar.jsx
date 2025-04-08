@@ -1,26 +1,27 @@
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import { Dropdown, DropdownButton, Navbar } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
-import useLocalStorage from "use-local-storage";
+// import { useNavigate } from "react-router-dom";
+// import useLocalStorage from "use-local-storage";
 
 export default function NavBar({
     handleShowDisOptModal,
     setModalShow,
+    handleSignOut,
     // selectedPatientInfo,
     // setSelectedPatientInfo,
 }) {
-    const [authToken, setAuthToken] = useLocalStorage('authToken', '');
-    const navigate = useNavigate();
+    // const [authToken, setAuthToken] = useLocalStorage('authToken', '');
+    // const navigate = useNavigate();
 
-    useEffect(() => {
-        if (!authToken) {
-            navigate('/signin');
-        }
-    }, [authToken, navigate]);
+    // useEffect(() => {
+    //     if (!authToken) {
+    //         navigate('/signin');
+    //     }
+    // }, [authToken, navigate]);
 
-    const handleSignOut = () => {
-        setAuthToken('');
-    };
+    // const handleSignOut = () => {
+    //     setAuthToken('');
+    // };
 
     const handleShowPatientInfoUpdateModal = () => {
         setModalShow('editPatientInfo');

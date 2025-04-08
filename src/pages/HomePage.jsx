@@ -1,12 +1,18 @@
 // import { useEffect } from "react";
 import { Button, Container } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import useLocalStorage from "use-local-storage";
 
 export default function HomePage() {
+    const authToken = useLocalStorage('authToken', '');
     const navigate = useNavigate();
 
     const navigateToMainPage = () => {
-        navigate('/main');
+        if (!authToken) {
+            navigate('/main');
+        } else {
+            navigate('/signin');
+        }
     };
 
     return (
